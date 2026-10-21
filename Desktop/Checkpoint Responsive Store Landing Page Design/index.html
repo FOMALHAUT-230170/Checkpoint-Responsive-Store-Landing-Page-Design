@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Chic & Responsive</title>
+    <!-- Liaison avec le fichier CSS externe -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- EN-TÊTE & NAVIGATION -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo">DIABA MARKET</a>
+            
+            <!-- Navigation de bureau -->
+            <nav class="desktop-nav">
+                <a href="#" class="nav-link active">Accueil</a>
+                <a href="#produits" class="nav-link">Produits</a>
+            </nav>
+
+            <!-- Déclencheur Menu Mobile (Trois barres) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+        </div>
+
+        <!-- Tiroir de navigation mobile -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#">Accueil</a>
+            <a href="#produits">Produits</a>
+        </nav>
+    </header>
+
+    <!-- SECTION DE BIENVENUE (HERO) -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Exclusivité Web</span>
+            <h1>Le style à portée de clic</h1>
+            <p>Améliorez votre style de vie avec nos quatre nouveautés phares de la saison.</p>
+            <a href="#produits" class="btn-primary">Acheter maintenant</a>
+        </div>
+    </section>
+
+    <!-- SECTION VITRINE PRODUITS -->
+    <main class="products-section" id="produits">
+        <div class="section-title">
+            <h2>Articles Tendances</h2>
+        </div>
+
+        <div class="products-grid">
+            
+            <!-- Fiche Produit 1 -->
+            <article class="product-card">
+                <div class="product-image-wrapper">
+                    
+                    <img src="COSTUME AFRICAIN.jpg" alt="Tenue chic et matûre">
+                    <span class="product-badge">-20%</span>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">Tenue chic et matûre</h3>
+                    <p class="product-description">Elégance tradi-moderne sénégalaise, vêtus de boubous bleu nuit soigneusement taillés et brodés.</p>
+                    <div class="product-footer">
+                        <span class="product-price">75 000 fcfa</span>
+                        <button class="btn-secondary">Acheter maintenant</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Fiche Produit 2 -->
+            <article class="product-card">
+                <div class="product-image-wrapper">
+                    
+                    <img src="COSTUME JEUNE.jfif" alt="COSTUME JEUNE">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">COSTUME JEUNE</h3>
+                    <p class="product-description">Tuniques sénégalaises modernes aux lignes épurées et minimalistes, illustrant parfaitement la tendance tradi-moderne masculineTuniques sénégalaises modernes aux lignes épurées et minimalistes, illustrant parfaitement la tendance tradi-moderne masculine</p>
+                    <div class="product-footer">
+                        <span class="product-price">55 000 fcfa</span>
+                        <button class="btn-secondary">Acheter maintenant</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Fiche Produit 3 -->
+            <article class="product-card">
+                <div class="product-image-wrapper">
+                    
+                    <img src="ROBE TENDANCE.jfif" alt="ROBE SUBLIME">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">ROBE SUBLIME</h3>
+                    <p class="product-description">Dentelle florale perlée et transparente, drapée élégamment sur une jupe longue, et complétée par un bustier rigide orné de délicates rangées de perles, scintillantes pour les grandes occasions comme la Tabaski.</p>
+                    <div class="product-footer">
+                        <span class="product-price">125 000 fcfa</span>
+                        <button class="btn-secondary">Acheter maintenant</button>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Fiche Produit 4 -->
+            <article class="product-card">
+                <div class="product-image-wrapper">
+                    
+                    <img src="GRAND BOUBOU.jpg" alt="GRAND BOUBOU MAMY">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-title">GRAND BOUBOU MAMY</h3>
+                    <p class="product-description">Elégance du grand boubou sénégalais en bazin à travers trois magnifiques déclinaisons de Sagnsé</p>
+                    <div class="product-footer">
+                        <span class="product-price">100 000 fcfa</span>
+                        <button class="btn-secondary">Acheter maintenant</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>DIABA MARKET</h3>
+                <p>Qualité sans compromis, livraison ultra-rapide.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">CGV</a></li>
+                    <li><a href="#">Confidentialité</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2027 DIABA MARKET. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Script simple pour actionner la réactivité du bouton burger mobile -->
+    <script>
+        const toggleBtn = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+
+        toggleBtn.addEventListener('click', () => {
+            mobileNav.classList.toggle('open');
+            toggleBtn.textContent = mobileNav.classList.contains('open') ? '✕' : '☰';
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('open');
+                toggleBtn.textContent = '☰';
+            });
+        });
+    </script>
+</body>
+</html>
